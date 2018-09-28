@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render actionButton correctly 1`] = `
+<div
+  className="btn-container"
+>
+  <button
+    className="btn shuffle"
+    onClick={[Function]}
+  >
+    Shuffle
+  </button>
+  <button
+    className="btn deal"
+    onClick={[Function]}
+    type="button"
+  >
+    Deal
+  </button>
+</div>
+`;
