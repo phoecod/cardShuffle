@@ -10,6 +10,13 @@ export class ActionButton extends React.Component {
     constructor (props) {
         super(props);
     }
+    componentDidUpdate() {
+        const deckLength = this.props.deck.length;
+        if (deckLength === 0) {
+            console.log("reset");
+            this.props.setDeckState(true);
+        }
+    }
 
     handleShuffle = () => {
         if (this.props.isDeckEmpty) {
@@ -26,14 +33,9 @@ export class ActionButton extends React.Component {
         const deck = this.props.deck;
         
         if (!this.props.isDeckEmpty) {
-            
             const cardIndex = Math.floor(Math.random() * deckLength);
             this.props.startDealCard(deck[cardIndex]);
             this.props.removeFromDeck(deck[cardIndex]);
-            
-        }
-        if (deckLength == 1) {
-            this.props.setDeckState(true);
         }
     }
 
